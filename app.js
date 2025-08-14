@@ -24,3 +24,16 @@ function mostrarListaAmigos() {
         lista.appendChild(li);
     }
 }
+
+function sortearAmigo() {
+    if(listaAmigos.length <2){
+        alert ('Se necesita mas de 2 nombres para sortear');
+            return;
+        
+    }
+    let indiceSorteo = Math.floor(Math.random() * listaAmigos.length);
+    let ganador = listaAmigos[indiceSorteo];
+    listaAmigos.splice(indiceSorteo, 1);
+    document.getElementById('resultado').innerHTML = `<li>${ganador}</li>`;
+    mostrarListaAmigos(); // actualizar la lista de participantes
+}
